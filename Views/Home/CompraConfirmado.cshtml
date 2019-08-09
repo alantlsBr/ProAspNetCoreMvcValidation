@@ -1,0 +1,40 @@
+﻿@model Compra
+@{ Layout = "_Layout"; }
+<div class="bg-success panel-body"><h2>Resumo Compra</h2></div>
+<table class="table table-bordered">
+    <tr>
+        <th>Nome:</th>
+        <td>@Model.Nome</td>
+    </tr>
+    <tr>
+        <th>E-mail:</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Telefone:</th>
+        <td>@Model.Telefone</td>
+    </tr>
+    <tr>
+        <th>Número com WhatsApp:</th>
+        <td>
+            @if (Model.NumeroComWhatsApp)
+            {
+                <label>Sim</label>
+            }
+            else
+            {
+                <label>Não</label>
+            }
+        </td>
+    </tr>
+    <tr>
+        <th>Quantidade:</th>
+        <td>@Model.Quantidade</td>
+    </tr>
+    <tr>
+        <th>Mensagem:</th>
+        <td>@Model.Mensagem</td>
+    </tr>
+
+</table>
+<a class="btn btn-success" asp-action="Compra">Nova Compra</a>

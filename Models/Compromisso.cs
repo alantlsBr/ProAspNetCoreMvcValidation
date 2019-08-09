@@ -7,8 +7,8 @@ namespace ProAspNetCoreMvcValidation.Models
 {
     public class Compromisso
     {
-        public string NomeCliente;
-        public DateTime Data;
-        public Boolean AceitaTermos;
+        public string NomeCliente { get; set; }
+        public DateTime Data { get; set; }
+        public Boolean AceitaTermos { get; set; }
     }
 }

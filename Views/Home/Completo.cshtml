@@ -1,0 +1,18 @@
+﻿@model ProAspNetCoreMvcValidation.Models.Compromisso
+@{ Layout = "_Layout"; }
+<div class="bg-success panel-body"><h2 class="text-center text-white display-4">Agendamento Completo</h2></div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Nome:</th>
+        <td>@Model.NomeCliente</td>
+    </tr>
+    <tr>
+        <th>Data:</th>
+        <td>@Model.Data.ToString("d")</td>
+    </tr>
+</table>
+
+<section class="row justify-content-center mb-5">
+    <a class="btn btn-success" asp-action="Index">Novo Agendamento</a>
+</section>

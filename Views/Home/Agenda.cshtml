@@ -1,0 +1,41 @@
+﻿@model ProAspNetCoreMvcValidation.Models.Compromisso
+@{ Layout = "_Layout"; }
+
+@section scripts {
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input.input-validation-error").addClass("is-invalid");
+        });
+    </script>
+}
+
+<div class="bg-primary panel-body"><h2 class="text-center text-white display-4">Agendamento</h2></div>
+<form class="panel-body" asp-action="Agenda" method="post">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <hr />
+
+    <div class="form-group">
+        <label asp-for="NomeCliente">Nome:</label>
+        <div><span asp-validation-for="NomeCliente" class="text-danger"></span></div>
+        <input asp-for="NomeCliente" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Data">Data:</label>
+        <div><span asp-validation-for="Data" class="text-danger"></span></div>
+        <input asp-for="Data" type="date" asp-format="{0:d}" class="form-control" />
+    </div>
+
+    <span asp-validation-for="AceitaTermos" class="text-danger"></span>
+    <div class="custom-control custom-checkbox mb-3">
+        <input type="checkbox" class="custom-control-input" asp-for="AceitaTermos">
+        <label asp-for="AceitaTermos" class="custom-control-label">Aceito os termos e condições</label>
+        <div class="invalid-feedback">Você deve aceitar os termos</div>
+    </div>
+
+    <section class="row justify-content-center mb-5">
+        <button type="submit" class="btn btn-primary">Agendar</button>
+    </section>
+
+</form>
