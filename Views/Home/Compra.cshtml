@@ -2,7 +2,7 @@
 @{ Layout = "_Layout"; }
 
 @section scripts {
-    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/jquery/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("input.input-validation-error").addClass("is-invalid");
@@ -49,6 +49,13 @@
         <input asp-for="Mensagem" type="text" class="form-control" />
     </div>
     <label>Aceita os termos de entraga?</label>
-    
+    <div class="custom-control custom-radio">
+        <input type="radio" asp-for="TermosEntrega" id="customRadio1" value="true" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio1">Sim</label>
+    </div>
+    <div class="custom-control custom-radio">
+        <input type="radio" asp-for="TermosEntrega" id="customRadio2" value="false" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio2">Não</label>
+    </div>
     <button type="submit" class="btn btn-primary">Registrar Contato</button>
 </form>

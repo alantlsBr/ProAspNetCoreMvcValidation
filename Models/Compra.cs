@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ProAspNetCoreMvcValidation.Util.Validation;
+using System.ComponentModel.DataAnnotations;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,6 +25,9 @@ namespace ProAspNetCoreMvcValidation.Models
 
         [StringLength(10)]
         public string Mensagem { get; set; }
+
+        [MarcarComoTrue(ErrorMessage = "Você deve marcar como true")]
+        public bool TermosEntrega { get; set; }
     }
 
 }
